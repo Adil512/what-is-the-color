@@ -1,0 +1,32 @@
+{
+  "name": "what-is-the-color",
+  "version": "1.0.0",
+  "description": "A professional color picker tool designed for designers, developers, and creative professionals",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adil512/what-is-the-color.git"
+  },
+  "keywords": [
+    "color-picker",
+    "color-tool",
+    "hex-color",
+    "rgb-color",
+    "hsl-color",
+    "color-converter",
+    "design-tool",
+    "web-design",
+    "frontend",
+    "javascript"
+  ],
+  "author": "Adil512",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Adil512/what-is-the-color/issues"
+  },
+  "homepage": "https://github.com/Adil512/what-is-the-color#readme"
+}

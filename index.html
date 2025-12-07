@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A professional color picker tool to explore, select, and convert colors between different formats">
+    <meta name="keywords" content="color picker, hex color, rgb color, hsl color, color converter">
+    <meta name="author" content="What is the Color">
+    <title>What is the Color - Professional Color Picker Tool</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 What is the Color?</h1>
+            <p class="subtitle">A Professional Color Picker Tool</p>
+        </header>
+
+        <main>
+            <!-- Color Display Section -->
+            <section class="color-display-section">
+                <div class="color-preview" id="colorPreview"></div>
+                <h2 class="color-name" id="colorName">Select a color</h2>
+            </section>
+
+            <!-- Color Picker Controls -->
+            <section class="picker-section">
+                <div class="picker-group">
+                    <label for="colorPicker">Color Picker:</label>
+                    <input type="color" id="colorPicker" value="#3498db">
+                </div>
+            </section>
+
+            <!-- RGB Sliders -->
+            <section class="sliders-section">
+                <h3>RGB Controls</h3>
+                <div class="slider-group">
+                    <label for="redSlider">Red: <span id="redValue">52</span></label>
+                    <input type="range" id="redSlider" min="0" max="255" value="52">
+                </div>
+                <div class="slider-group">
+                    <label for="greenSlider">Green: <span id="greenValue">152</span></label>
+                    <input type="range" id="greenSlider" min="0" max="255" value="152">
+                </div>
+                <div class="slider-group">
+                    <label for="blueSlider">Blue: <span id="blueValue">219</span></label>
+                    <input type="range" id="blueSlider" min="0" max="255" value="219">
+                </div>
+            </section>
+
+            <!-- HSL Sliders -->
+            <section class="sliders-section">
+                <h3>HSL Controls</h3>
+                <div class="slider-group">
+                    <label for="hueSlider">Hue: <span id="hueValue">204</span>°</label>
+                    <input type="range" id="hueSlider" min="0" max="360" value="204">
+                </div>
+                <div class="slider-group">
+                    <label for="saturationSlider">Saturation: <span id="saturationValue">71</span>%</label>
+                    <input type="range" id="saturationSlider" min="0" max="100" value="71">
+                </div>
+                <div class="slider-group">
+                    <label for="lightnessSlider">Lightness: <span id="lightnessValue">53</span>%</label>
+                    <input type="range" id="lightnessSlider" min="0" max="100" value="53">
+                </div>
+            </section>
+
+            <!-- Color Formats -->
+            <section class="formats-section">
+                <h3>Color Formats</h3>
+                <div class="format-group">
+                    <label>HEX:</label>
+                    <div class="format-value">
+                        <input type="text" id="hexValue" readonly value="#3498db">
+                        <button class="copy-btn" data-target="hexValue">Copy</button>
+                    </div>
+                </div>
+                <div class="format-group">
+                    <label>RGB:</label>
+                    <div class="format-value">
+                        <input type="text" id="rgbValue" readonly value="rgb(52, 152, 219)">
+                        <button class="copy-btn" data-target="rgbValue">Copy</button>
+                    </div>
+                </div>
+                <div class="format-group">
+                    <label>HSL:</label>
+                    <div class="format-value">
+                        <input type="text" id="hslValue" readonly value="hsl(204, 71%, 53%)">
+                        <button class="copy-btn" data-target="hslValue">Copy</button>
+                    </div>
+                </div>
+                <div class="format-group">
+                    <label>CMYK:</label>
+                    <div class="format-value">
+                        <input type="text" id="cmykValue" readonly value="cmyk(76%, 31%, 0%, 14%)">
+                        <button class="copy-btn" data-target="cmykValue">Copy</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Color Shades and Tints -->
+            <section class="palette-section">
+                <h3>Shades & Tints</h3>
+                <div class="palette-grid" id="paletteGrid"></div>
+            </section>
+
+            <!-- Saved Colors -->
+            <section class="saved-section">
+                <h3>Saved Colors</h3>
+                <button class="save-btn" id="saveColor">Save Current Color</button>
+                <div class="saved-colors" id="savedColors"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 What is the Color. A professional color picker tool for designers and developers.</p>
+            <p>
+                <a href="docs/documentation.html">Documentation</a> | 
+                <a href="https://github.com/Adil512/what-is-the-color" target="_blank">GitHub</a>
+            </p>
+        </footer>
+    </div>
+
+    <div class="toast" id="toast">Color copied to clipboard!</div>
+
+    <script src="js/colorUtils.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

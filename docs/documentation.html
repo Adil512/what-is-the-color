@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - What is the Color</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            border-bottom: 3px solid #764ba2;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #764ba2;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            color: #667eea;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #e74c3c;
+        }
+
+        pre {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        pre code {
+            background: none;
+            color: #ecf0f1;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .note {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #667eea;
+            color: white;
+        }
+
+        table tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 What is the Color - Documentation</h1>
+        
+        <p>Welcome to the comprehensive documentation for the What is the Color tool. This guide will help you understand all the features and how to use them effectively.</p>
+
+        <h2>🎯 Overview</h2>
+        <p>What is the Color is a professional color picker tool that allows you to:</p>
+        <ul>
+            <li>Select and preview colors interactively</li>
+            <li>Convert between different color formats (HEX, RGB, HSL, CMYK)</li>
+            <li>Generate color variations (shades and tints)</li>
+            <li>Save favorite colors for later use</li>
+            <li>Copy color values with one click</li>
+        </ul>
+
+        <h2>🚀 Getting Started</h2>
+        
+        <h3>Basic Usage</h3>
+        <ol>
+            <li>Open <code>index.html</code> in your web browser</li>
+            <li>Use the color picker or sliders to select a color</li>
+            <li>View the color information and formats</li>
+            <li>Click "Copy" buttons to copy color values</li>
+            <li>Save colors you like for future reference</li>
+        </ol>
+
+        <div class="note">
+            <strong>💡 Tip:</strong> For the best experience, use a modern browser like Chrome, Firefox, or Edge.
+        </div>
+
+        <h2>🎨 Features in Detail</h2>
+
+        <h3>1. Color Picker</h3>
+        <p>The native HTML5 color picker provides a quick way to select any color. Click on it to open your browser's color selection dialog.</p>
+
+        <h3>2. RGB Sliders</h3>
+        <p>Fine-tune your color by adjusting individual Red, Green, and Blue values from 0 to 255.</p>
+        <ul>
+            <li><strong>Red Slider:</strong> Controls the amount of red in your color</li>
+            <li><strong>Green Slider:</strong> Controls the amount of green in your color</li>
+            <li><strong>Blue Slider:</strong> Controls the amount of blue in your color</li>
+        </ul>
+
+        <h3>3. HSL Controls</h3>
+        <p>Adjust colors using the HSL color model for more intuitive color adjustments:</p>
+        <ul>
+            <li><strong>Hue (0-360°):</strong> The color type (red, blue, green, etc.)</li>
+            <li><strong>Saturation (0-100%):</strong> How vivid or dull the color is</li>
+            <li><strong>Lightness (0-100%):</strong> How light or dark the color is</li>
+        </ul>
+
+        <h3>4. Color Formats</h3>
+        <p>View and copy your color in multiple formats:</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Format</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HEX</td>
+                    <td>Hexadecimal notation (web standard)</td>
+                    <td>#3498db</td>
+                </tr>
+                <tr>
+                    <td>RGB</td>
+                    <td>Red, Green, Blue values</td>
+                    <td>rgb(52, 152, 219)</td>
+                </tr>
+                <tr>
+                    <td>HSL</td>
+                    <td>Hue, Saturation, Lightness</td>
+                    <td>hsl(204, 71%, 53%)</td>
+                </tr>
+                <tr>
+                    <td>CMYK</td>
+                    <td>Cyan, Magenta, Yellow, Key (for print)</td>
+                    <td>cmyk(76%, 31%, 0%, 14%)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>5. Shades & Tints</h3>
+        <p>Automatically generated color variations:</p>
+        <ul>
+            <li><strong>Tints:</strong> Lighter versions created by adding white</li>
+            <li><strong>Shades:</strong> Darker versions created by adding black</li>
+        </ul>
+        <p>Click any variation to instantly select it as your current color.</p>
+
+        <h3>6. Saved Colors</h3>
+        <p>Build your color palette by saving colors:</p>
+        <ol>
+            <li>Select a color you like</li>
+            <li>Click "Save Current Color"</li>
+            <li>The color is stored in your browser's local storage</li>
+            <li>Click a saved color to reload it</li>
+            <li>Hover over a saved color and click × to delete it</li>
+        </ol>
+
+        <div class="note">
+            <strong>📌 Note:</strong> Saved colors persist in your browser and will be available next time you visit.
+        </div>
+
+        <h2>⌨️ Keyboard Shortcuts</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Shortcut</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Navigate controls</td>
+                    <td>Tab / Shift+Tab</td>
+                </tr>
+                <tr>
+                    <td>Adjust sliders</td>
+                    <td>Arrow Keys</td>
+                </tr>
+                <tr>
+                    <td>Activate button</td>
+                    <td>Enter / Space</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🔧 Technical Details</h2>
+
+        <h3>Color Conversion Algorithms</h3>
+        <p>The tool uses standard color conversion formulas:</p>
+
+        <h4>HEX to RGB</h4>
+        <pre><code>R = parseInt(hex.substring(1,3), 16)
+G = parseInt(hex.substring(3,5), 16)
+B = parseInt(hex.substring(5,7), 16)</code></pre>
+
+        <h4>RGB to HSL</h4>
+        <p>Normalized RGB values are used to calculate hue, saturation, and lightness using standard HSL conversion formulas.</p>
+
+        <h4>RGB to CMYK</h4>
+        <pre><code>C = 1 - (R / 255)
+M = 1 - (G / 255)
+Y = 1 - (B / 255)
+K = min(C, M, Y)</code></pre>
+
+        <h3>Browser Storage</h3>
+        <p>Saved colors are stored using the browser's Local Storage API. Each color is stored as a HEX value in a JSON array.</p>
+
+        <h2>🌐 Browser Support</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Browser</th>
+                    <th>Minimum Version</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Chrome</td>
+                    <td>20+</td>
+                    <td>Full support</td>
+                </tr>
+                <tr>
+                    <td>Firefox</td>
+                    <td>29+</td>
+                    <td>Full support</td>
+                </tr>
+                <tr>
+                    <td>Safari</td>
+                    <td>12.1+</td>
+                    <td>Full support</td>
+                </tr>
+                <tr>
+                    <td>Edge</td>
+                    <td>14+</td>
+                    <td>Full support</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="warning">
+            <strong>⚠️ Warning:</strong> Internet Explorer is not supported due to lack of modern JavaScript features.
+        </div>
+
+        <h2>🎓 Use Cases</h2>
+
+        <h3>For Web Designers</h3>
+        <ul>
+            <li>Pick colors from designs and get CSS values</li>
+            <li>Generate color palettes with shades and tints</li>
+            <li>Convert colors between formats for different tools</li>
+        </ul>
+
+        <h3>For Developers</h3>
+        <ul>
+            <li>Get exact color values for CSS/HTML</li>
+            <li>Test color combinations</li>
+            <li>Copy color values in any format needed</li>
+        </ul>
+
+        <h3>For Print Designers</h3>
+        <ul>
+            <li>Convert web colors to CMYK for print</li>
+            <li>Create color swatches</li>
+            <li>Maintain color consistency across media</li>
+        </ul>
+
+        <h2>🤔 Troubleshooting</h2>
+
+        <h3>Saved colors not persisting?</h3>
+        <ul>
+            <li>Check that your browser allows local storage</li>
+            <li>Make sure you're not in private/incognito mode</li>
+            <li>Check browser storage settings</li>
+        </ul>
+
+        <h3>Colors look different on different screens?</h3>
+        <ul>
+            <li>This is normal due to screen calibration differences</li>
+            <li>Professional color work should use calibrated monitors</li>
+            <li>Test on target devices when possible</li>
+        </ul>
+
+        <h3>Copy to clipboard not working?</h3>
+        <ul>
+            <li>Ensure your browser supports the Clipboard API</li>
+            <li>Check that clipboard permissions are granted</li>
+            <li>Try using HTTPS instead of HTTP</li>
+        </ul>
+
+        <h2>📞 Support & Contact</h2>
+        <p>Need help? Have suggestions?</p>
+        <ul>
+            <li><strong>GitHub Issues:</strong> <a href="https://github.com/Adil512/what-is-the-color/issues">Report bugs or request features</a></li>
+            <li><strong>GitHub Discussions:</strong> Ask questions and share ideas</li>
+        </ul>
+
+        <h2>📄 License</h2>
+        <p>This project is licensed under the MIT License. You are free to use, modify, and distribute this tool. See the LICENSE file for details.</p>
+
+        <a href="../index.html" class="back-link">← Back to Color Picker</a>
+    </div>
+</body>
+</html>
