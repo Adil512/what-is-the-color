@@ -254,12 +254,30 @@ class ColorPickerApp {
      * @param {string} text - Text to copy
      */
     copyToClipboard(text) {
-        navigator.clipboard.writeText(text).then(() => {
-            this.showToast(`Copied: ${text}`);
-        }).catch(err => {
-            console.error('Failed to copy:', err);
-            this.showToast('Failed to copy to clipboard');
-        });
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(() => {
+                this.showToast(`Copied: ${text}`);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                this.showToast('Failed to copy to clipboard');
+            });
+        } else {
+            // Fallback for browsers without Clipboard API
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                this.showToast(`Copied: ${text}`);
+            } catch (err) {
+                console.error('Fallback copy failed:', err);
+                this.showToast('Failed to copy to clipboard');
+            }
+            document.body.removeChild(textArea);
+        }
     }
     
     /**
@@ -285,7 +303,13 @@ class ColorPickerApp {
             this.currentColor.b
         );
         
-        let savedColors = JSON.parse(localStorage.getItem('savedColors') || '[]');
+        let savedColors = [];
+        try {
+            savedColors = JSON.parse(localStorage.getItem('savedColors') || '[]');
+        } catch (err) {
+            console.error('Error parsing saved colors:', err);
+            savedColors = [];
+        }
         
         // Avoid duplicates
         if (!savedColors.includes(hex)) {
@@ -302,7 +326,14 @@ class ColorPickerApp {
      * Load saved colors from localStorage and display
      */
     loadSavedColors() {
-        const savedColors = JSON.parse(localStorage.getItem('savedColors') || '[]');
+        let savedColors = [];
+        try {
+            savedColors = JSON.parse(localStorage.getItem('savedColors') || '[]');
+        } catch (err) {
+            console.error('Error parsing saved colors:', err);
+            savedColors = [];
+        }
+        
         this.savedColors.innerHTML = '';
         
         if (savedColors.length === 0) {
@@ -347,7 +378,13 @@ class ColorPickerApp {
      * @param {string} colorToDelete - Hex color to delete
      */
     deleteSavedColor(colorToDelete) {
-        let savedColors = JSON.parse(localStorage.getItem('savedColors') || '[]');
+        let savedColors = [];
+        try {
+            savedColors = JSON.parse(localStorage.getItem('savedColors') || '[]');
+        } catch (err) {
+            console.error('Error parsing saved colors:', err);
+            savedColors = [];
+        }
         savedColors = savedColors.filter(color => color !== colorToDelete);
         localStorage.setItem('savedColors', JSON.stringify(savedColors));
         this.loadSavedColors();

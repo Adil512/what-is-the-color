@@ -206,10 +206,7 @@ const ColorUtils = {
      * @returns {string} Color name
      */
     getColorName(r, g, b) {
-        const hsl = this.rgbToHsl(r, g, b);
-        const h = hsl.h;
-        const s = hsl.s;
-        const l = hsl.l;
+        const { h, s, l } = this.rgbToHsl(r, g, b);
 
         // Check for grayscale
         if (s < 10) {
