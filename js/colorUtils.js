@@ -26,8 +26,13 @@ const ColorUtils = {
      * @returns {string} Hex color code
      */
     rgbToHex(r, g, b) {
+        // Clamp values to valid range
+        r = Math.max(0, Math.min(255, Math.round(r)));
+        g = Math.max(0, Math.min(255, Math.round(g)));
+        b = Math.max(0, Math.min(255, Math.round(b)));
+        
         const toHex = (n) => {
-            const hex = Math.round(n).toString(16);
+            const hex = n.toString(16);
             return hex.length === 1 ? '0' + hex : hex;
         };
         return '#' + toHex(r) + toHex(g) + toHex(b);

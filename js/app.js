@@ -56,8 +56,10 @@ class ColorPickerApp {
         // Color Picker
         this.colorPicker.addEventListener('input', (e) => {
             const rgb = ColorUtils.hexToRgb(e.target.value);
-            this.currentColor = rgb;
-            this.updateFromRGB();
+            if (rgb) {
+                this.currentColor = rgb;
+                this.updateFromRGB();
+            }
         });
         
         // RGB Sliders
@@ -240,9 +242,11 @@ class ColorPickerApp {
             // Click to select this color
             item.addEventListener('click', () => {
                 const rgb = ColorUtils.hexToRgb(color);
-                this.currentColor = rgb;
-                this.updateFromRGB();
-                this.showToast(`Selected: ${color}`);
+                if (rgb) {
+                    this.currentColor = rgb;
+                    this.updateFromRGB();
+                    this.showToast(`Selected: ${color}`);
+                }
             });
             
             this.paletteGrid.appendChild(item);
@@ -364,9 +368,11 @@ class ColorPickerApp {
             // Click to load this color
             item.addEventListener('click', () => {
                 const rgb = ColorUtils.hexToRgb(color);
-                this.currentColor = rgb;
-                this.updateFromRGB();
-                this.showToast(`Loaded: ${color}`);
+                if (rgb) {
+                    this.currentColor = rgb;
+                    this.updateFromRGB();
+                    this.showToast(`Loaded: ${color}`);
+                }
             });
             
             this.savedColors.appendChild(item);
