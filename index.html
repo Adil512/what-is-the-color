@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="What Is The Color - A simple and elegant color identifier tool that helps you identify colors from images, camera, or by picking from a color wheel.">
+    <meta name="keywords" content="color picker, color identifier, color tool, hex color, rgb color">
+    <meta name="author" content="Adil">
+    <title>What Is The Color - Color Identifier Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 What Is The Color?</h1>
+            <p class="subtitle">Identify and explore colors with ease</p>
+        </header>
+
+        <main>
+            <div class="color-picker-section">
+                <h2>Pick a Color</h2>
+                <div class="picker-container">
+                    <input type="color" id="colorPicker" value="#3498db">
+                    <button id="randomColorBtn" class="btn btn-primary">Random Color</button>
+                </div>
+            </div>
+
+            <div class="color-display">
+                <div id="colorPreview" class="color-preview"></div>
+                <div class="color-info">
+                    <h3>Color Information</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>HEX:</label>
+                            <span id="hexValue" class="value">#3498db</span>
+                            <button class="copy-btn" data-copy="hex" title="Copy HEX">📋</button>
+                        </div>
+                        <div class="info-item">
+                            <label>RGB:</label>
+                            <span id="rgbValue" class="value">rgb(52, 152, 219)</span>
+                            <button class="copy-btn" data-copy="rgb" title="Copy RGB">📋</button>
+                        </div>
+                        <div class="info-item">
+                            <label>HSL:</label>
+                            <span id="hslValue" class="value">hsl(204, 70%, 53%)</span>
+                            <button class="copy-btn" data-copy="hsl" title="Copy HSL">📋</button>
+                        </div>
+                        <div class="info-item">
+                            <label>CMYK:</label>
+                            <span id="cmykValue" class="value">cmyk(76%, 31%, 0%, 14%)</span>
+                            <button class="copy-btn" data-copy="cmyk" title="Copy CMYK">📋</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="color-shades">
+                <h3>Color Variations</h3>
+                <div id="shadesContainer" class="shades-grid"></div>
+            </div>
+
+            <div class="upload-section">
+                <h3>Extract Color from Image</h3>
+                <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                <button id="uploadBtn" class="btn btn-secondary">Upload Image</button>
+                <canvas id="imageCanvas" style="display: none;"></canvas>
+                <div id="extractedColors" class="extracted-colors"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 What Is The Color. Open Source Project.</p>
+            <p>
+                <a href="https://github.com/Adil512/what-is-the-color" target="_blank">GitHub</a> |
+                <a href="LICENSE">License</a>
+            </p>
+        </footer>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
